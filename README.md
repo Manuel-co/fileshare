@@ -1,38 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FileShare
+
+FileShare is a modern, secure file sharing platform built with Next.js 13, featuring end-to-end encryption and real-time analytics. It provides a seamless way to upload, share, and track files with enterprise-grade security.
+
+![FileShare Banner](public/og.png)
+
+## Features
+
+### 🚀 Core Features
+- **Secure File Sharing**: End-to-end encryption for all file transfers
+- **Real-time Analytics**: Track file uploads, downloads, and engagement
+- **User Dashboard**: Manage and monitor your shared files
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+### 💫 Key Highlights
+- **Quick Upload**: Drag & drop interface for easy file uploads
+- **File Management**: Organize, track, and delete your files
+- **Download Tracking**: Monitor file downloads and views
+- **User Authentication**: Secure login and user management
+- **Dark Mode**: Built-in theme support for light and dark modes
+
+### 📊 Analytics Dashboard
+- Upload and download trends
+- File type distribution
+- Popular files tracking
+- User engagement metrics
+- Daily and monthly statistics
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React, TypeScript
+- **Styling**: Tailwind CSS, Shadcn UI
+- **Charts**: Chart.js, React-Chartjs-2
+- **Icons**: Lucide Icons
+- **Authentication**: Custom auth with secure storage
+- **State Management**: React Hooks
+- **UI Components**: Custom components with Radix UI
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 16.8 or later
+- npm or yarn package manager
 
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/fileshare.git
+cd fileshare
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+fileshare/
+├── app/                    # Next.js 13 app directory
+│   ├── analytics/         # Analytics dashboard
+│   ├── files/            # File management
+│   ├── login/            # Authentication
+│   ├── pricing/          # Pricing plans
+│   ├── upload/           # File upload
+│   └── layout.tsx        # Root layout
+├── components/            # Reusable components
+│   ├── ui/               # UI components
+│   ├── FileList.tsx      # File listing component
+│   ├── FileUpload.tsx    # Upload component
+│   ├── Footer.tsx        # Footer component
+│   └── Navbar.tsx        # Navigation component
+├── lib/                   # Utility functions
+├── public/               # Static assets
+└── styles/               # Global styles
+```
 
-## Learn More
+## Key Components
 
-To learn more about Next.js, take a look at the following resources:
+### File Upload
+- Drag & drop interface
+- Progress tracking
+- File type validation
+- Automatic encryption
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Analytics Dashboard
+- Real-time metrics
+- Interactive charts
+- Performance tracking
+- User engagement analysis
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### User Management
+- Secure authentication
+- Profile management
+- Session handling
+- Access control
 
-## Deploy on Vercel
+## Security Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- End-to-end encryption
+- Secure file storage
+- Protected routes
+- Session management
+- Data privacy controls
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# files-share-app
-# files-share-app
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [Chart.js](https://www.chartjs.org/)
+- [Radix UI](https://www.radix-ui.com/)
+
+## Support
+
+For support, email support@fileshare.com or join our Slack channel.

@@ -134,8 +134,23 @@ export default function AnalyticsPage() {
     plugins: {
       legend: {
         position: 'top' as const,
+        labels: {
+          boxWidth: 10,
+          padding: 10,
+          font: {
+            size: 12
+          }
+        }
       },
     },
+    scales: {
+      x: {
+        ticks: {
+          maxRotation: 45,
+          minRotation: 45
+        }
+      }
+    }
   };
 
   if (isLoading) {
@@ -150,59 +165,59 @@ export default function AnalyticsPage() {
   }
 
   return (
-    <div className="container mx-auto py-8 space-y-8">
+    <div className="container mx-auto px-4 py-8 space-y-8">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold">Analytics Dashboard</h1>
-        <p className="text-muted-foreground">
+        <h1 className="text-2xl md:text-3xl font-bold">Analytics Dashboard</h1>
+        <p className="text-sm md:text-base text-muted-foreground">
           Track your file sharing metrics and user engagement
         </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="p-6 space-y-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <Card className="p-4 md:p-6 space-y-2">
           <div className="flex items-center justify-between">
-            <h3 className="text-sm font-medium text-muted-foreground">Total Uploads</h3>
+            <h3 className="text-xs md:text-sm font-medium text-muted-foreground">Total Uploads</h3>
             <FileUp className="w-4 h-4 text-blue-500" />
           </div>
-          <p className="text-2xl font-bold">{stats.totalUploads.toLocaleString()}</p>
-          <div className="flex items-center text-sm text-green-500">
+          <p className="text-xl md:text-2xl font-bold">{stats.totalUploads.toLocaleString()}</p>
+          <div className="flex items-center text-xs md:text-sm text-green-500">
             <TrendingUp className="w-4 h-4 mr-1" />
             <span>12% increase</span>
           </div>
         </Card>
 
-        <Card className="p-6 space-y-2">
+        <Card className="p-4 md:p-6 space-y-2">
           <div className="flex items-center justify-between">
-            <h3 className="text-sm font-medium text-muted-foreground">Total Downloads</h3>
+            <h3 className="text-xs md:text-sm font-medium text-muted-foreground">Total Downloads</h3>
             <Download className="w-4 h-4 text-green-500" />
           </div>
-          <p className="text-2xl font-bold">{stats.totalDownloads.toLocaleString()}</p>
-          <div className="flex items-center text-sm text-green-500">
+          <p className="text-xl md:text-2xl font-bold">{stats.totalDownloads.toLocaleString()}</p>
+          <div className="flex items-center text-xs md:text-sm text-green-500">
             <TrendingUp className="w-4 h-4 mr-1" />
             <span>8% increase</span>
           </div>
         </Card>
 
-        <Card className="p-6 space-y-2">
+        <Card className="p-4 md:p-6 space-y-2">
           <div className="flex items-center justify-between">
-            <h3 className="text-sm font-medium text-muted-foreground">Total Views</h3>
+            <h3 className="text-xs md:text-sm font-medium text-muted-foreground">Total Views</h3>
             <Eye className="w-4 h-4 text-indigo-500" />
           </div>
-          <p className="text-2xl font-bold">{stats.totalViews.toLocaleString()}</p>
-          <div className="flex items-center text-sm text-green-500">
+          <p className="text-xl md:text-2xl font-bold">{stats.totalViews.toLocaleString()}</p>
+          <div className="flex items-center text-xs md:text-sm text-green-500">
             <TrendingUp className="w-4 h-4 mr-1" />
             <span>15% increase</span>
           </div>
         </Card>
 
-        <Card className="p-6 space-y-2">
+        <Card className="p-4 md:p-6 space-y-2">
           <div className="flex items-center justify-between">
-            <h3 className="text-sm font-medium text-muted-foreground">Active Users</h3>
+            <h3 className="text-xs md:text-sm font-medium text-muted-foreground">Active Users</h3>
             <Users className="w-4 h-4 text-red-500" />
           </div>
-          <p className="text-2xl font-bold">{stats.activeUsers.toLocaleString()}</p>
-          <div className="flex items-center text-sm text-green-500">
+          <p className="text-xl md:text-2xl font-bold">{stats.activeUsers.toLocaleString()}</p>
+          <div className="flex items-center text-xs md:text-sm text-green-500">
             <TrendingUp className="w-4 h-4 mr-1" />
             <span>5% increase</span>
           </div>
@@ -211,30 +226,30 @@ export default function AnalyticsPage() {
 
       {/* Charts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <Card className="p-6">
-          <h3 className="text-lg font-semibold mb-4">Upload & Download Trends</h3>
-          <div className="h-[300px]">
+        <Card className="p-4 md:p-6">
+          <h3 className="text-base md:text-lg font-semibold mb-4">Upload & Download Trends</h3>
+          <div className="h-[250px] md:h-[300px]">
             <Line data={lineChartData} options={chartOptions} />
           </div>
         </Card>
 
-        <Card className="p-6">
-          <h3 className="text-lg font-semibold mb-4">Daily File Views</h3>
-          <div className="h-[300px]">
+        <Card className="p-4 md:p-6">
+          <h3 className="text-base md:text-lg font-semibold mb-4">Daily File Views</h3>
+          <div className="h-[250px] md:h-[300px]">
             <Bar data={barChartData} options={chartOptions} />
           </div>
         </Card>
 
-        <Card className="p-6">
-          <h3 className="text-lg font-semibold mb-4">File Type Distribution</h3>
-          <div className="h-[300px]">
+        <Card className="p-4 md:p-6">
+          <h3 className="text-base md:text-lg font-semibold mb-4">File Type Distribution</h3>
+          <div className="h-[250px] md:h-[300px]">
             <Doughnut data={doughnutChartData} options={chartOptions} />
           </div>
         </Card>
 
-        <Card className="p-6">
-          <h3 className="text-lg font-semibold mb-4">Popular Files</h3>
-          <div className="space-y-4">
+        <Card className="p-4 md:p-6">
+          <h3 className="text-base md:text-lg font-semibold mb-4">Popular Files</h3>
+          <div className="space-y-4 max-h-[250px] md:max-h-[300px] overflow-y-auto">
             {[1, 2, 3, 4, 5].map((_, i) => (
               <div key={i} className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -242,16 +257,16 @@ export default function AnalyticsPage() {
                     <FileUp className="w-4 h-4 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium">document-{i + 1}.pdf</p>
+                    <p className="text-xs md:text-sm font-medium truncate max-w-[120px] md:max-w-[200px]">document-{i + 1}.pdf</p>
                     <p className="text-xs text-muted-foreground">Uploaded 2 days ago</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 md:gap-4 text-xs md:text-sm text-muted-foreground">
                   <span className="flex items-center gap-1">
-                    <Download className="w-4 h-4" /> {Math.floor(Math.random() * 100)}
+                    <Download className="w-3 h-3 md:w-4 md:h-4" /> {Math.floor(Math.random() * 100)}
                   </span>
                   <span className="flex items-center gap-1">
-                    <Eye className="w-4 h-4" /> {Math.floor(Math.random() * 200)}
+                    <Eye className="w-3 h-3 md:w-4 md:h-4" /> {Math.floor(Math.random() * 200)}
                   </span>
                 </div>
               </div>
