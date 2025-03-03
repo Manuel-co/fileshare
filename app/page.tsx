@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Shield, Zap, Clock, Share2, Cloud, Lock, Upload } from "lucide-react";
+import { Shield, Zap, Clock, Share2, Cloud, Lock, Upload } from "lucide-react";
 import Link from "next/link";
 
 const features = [
@@ -48,17 +48,17 @@ export default function Home() {
             Share Files with <span className="text-primary">Confidence</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The secure, fast, and easy way to share your files with anyone. Protected with end-to-end encryption.
+            The secure, fast, and free way to share your files with anyone. Protected with end-to-end encryption.
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/upload">
               <Button size="lg" className="gap-2">
-                Upload Files <Upload className="w-4 h-4" />
+                Start Uploading <Upload className="w-4 h-4" />
               </Button>
             </Link>
-            <Link href="/pricing">
+            <Link href="/files">
               <Button size="lg" variant="outline">
-                View Pricing
+                View Files
               </Button>
             </Link>
           </div>
@@ -115,9 +115,9 @@ export default function Home() {
                 </div>
               </div>
               <div className="pt-4">
-                <Link href="/pricing">
+                <Link href="/upload">
                   <Button className="gap-2">
-                    Learn More <ArrowRight className="w-4 h-4" />
+                    Try It Now <Upload className="w-4 h-4" />
                   </Button>
                 </Link>
               </div>
@@ -139,12 +139,12 @@ export default function Home() {
         <Card className="p-12 text-center space-y-6 bg-primary text-primary-foreground">
           <h2 className="text-3xl font-bold">Ready to Get Started?</h2>
           <p className="text-lg max-w-2xl mx-auto opacity-90">
-            Join thousands of users who trust FileShare for their secure file sharing needs. Your files are protected with end-to-end encryption.
+            Join thousands of users who trust FileShare for their secure file sharing needs. It's completely free and protected with end-to-end encryption.
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/upload">
               <Button size="lg" variant="secondary" className="gap-2">
-                Upload Your First File <ArrowRight className="w-4 h-4" />
+                Start Sharing Now <Upload className="w-4 h-4" />
               </Button>
             </Link>
           </div>

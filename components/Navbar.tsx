@@ -60,13 +60,6 @@ export function Navbar() {
         Upload
       </Link>
       <Link 
-        href="/pricing" 
-        className={`text-sm ${pathname === "/pricing" ? "text-primary font-medium" : "text-muted-foreground"}`}
-        onClick={() => setIsOpen(false)}
-      >
-        Pricing
-      </Link>
-      <Link 
         href="/files" 
         className={`text-sm ${pathname === "/files" ? "text-primary font-medium" : "text-muted-foreground"}`}
         onClick={() => setIsOpen(false)}
