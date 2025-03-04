@@ -139,7 +139,7 @@ export default function Home() {
         <Card className="p-12 text-center space-y-6 bg-primary text-primary-foreground">
           <h2 className="text-3xl font-bold">Ready to Get Started?</h2>
           <p className="text-lg max-w-2xl mx-auto opacity-90">
-            Join thousands of users who trust FileShare for their secure file sharing needs. It's completely free and protected with end-to-end encryption.
+            Join thousands of users who trust FileShare for their secure file sharing needs. It&apos;s completely free and protected with end-to-end encryption.
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/upload">
